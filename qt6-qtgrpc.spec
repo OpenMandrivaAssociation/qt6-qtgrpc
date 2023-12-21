@@ -1,11 +1,11 @@
-#define beta rc
+%define beta beta1
 #define snapshot 20200627
 %define major 6
 
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgrpc
-Version:	6.6.1
+Version:	6.7.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -61,7 +61,13 @@ Qt %{major} GRPC module
 %{_qtdir}/lib/cmake/Qt6/FindWrapProto*.cmake \
 %{_qtdir}/libexec/qtprotobufgen
 
-%qt6libs Grpc Protobuf ProtobufQtCoreTypes ProtobufQtGuiTypes ProtobufWellKnownTypes
+%define extra_files_GrpcQuick \
+%{_qtdir}/qml/QtGrpc
+
+%define extra_devel_files_GrpcQuick \
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6grpcquickplugin*
+
+%qt6libs Grpc GrpcQuick Protobuf ProtobufQtCoreTypes ProtobufQtGuiTypes ProtobufWellKnownTypes
 
 %package examples
 Summary:	Example code demonstrating the use of %{name}
