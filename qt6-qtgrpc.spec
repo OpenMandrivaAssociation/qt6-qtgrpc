@@ -31,9 +31,11 @@ BuildRequires:	%{_lib}Qt%{major}OpenGL-devel
 BuildRequires:	%{_lib}Qt%{major}OpenGLWidgets-devel
 BuildRequires:	%{_lib}Qt%{major}DBus-devel
 BuildRequires:	qt%{major}-cmake
+BuildRequires:	cmake(Qt%{major})
 BuildRequires:	cmake(Qt%{major}Quick)
 BuildRequires:	cmake(Qt%{major}Qml)
 BuildRequires:	cmake(Qt%{major}QmlCore)
+BuildRequires:	cmake(Qt%{major}QmlNetwork)
 BuildRequires:	cmake(Qt%{major}QmlNetworkplugin)
 BuildRequires:	cmake(Qt%{major}QmlModels)
 BuildRequires:	cmake(Qt%{major}Test)
