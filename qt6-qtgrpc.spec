@@ -49,6 +49,8 @@ BuildRequires:	pkgconfig(gypsy)
 BuildRequires:	pkgconfig(gconf-2.0)
 BuildRequires:	pkgconfig(geoclue-2.0)
 BuildRequires:	pkgconfig(protobuf)
+BuildRequires:	pkgconfig(grpc)
+BuildRequires:	pkgconfig(libcares)
 BuildRequires:	cmake(LLVM)
 BuildRequires:	cmake(Clang)
 BuildRequires:	%{_lib}gpuruntime
