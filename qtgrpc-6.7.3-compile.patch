@@ -1,0 +1,11 @@
+diff -up qtgrpc-everywhere-src-6.7.3/examples/grpc/magic8ball/grpc_server_example/CMakeLists.txt.omv~ qtgrpc-everywhere-src-6.7.3/examples/grpc/magic8ball/grpc_server_example/CMakeLists.txt
+--- qtgrpc-everywhere-src-6.7.3/examples/grpc/magic8ball/grpc_server_example/CMakeLists.txt.omv~	2024-09-29 20:42:57.322456973 +0200
++++ qtgrpc-everywhere-src-6.7.3/examples/grpc/magic8ball/grpc_server_example/CMakeLists.txt	2024-09-29 20:46:24.496026925 +0200
+@@ -59,6 +59,7 @@ add_library(MagicServerRunner
+ )
+ 
+ target_include_directories(MagicServerRunner PRIVATE ${out_dir})
++include_directories(${Qt6Core_INCLUDE_DIRS})
+ 
+ target_link_libraries(MagicServerRunner
+     PRIVATE

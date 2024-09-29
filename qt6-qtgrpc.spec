@@ -5,8 +5,8 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgrpc
-Version:	6.7.2
-Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}4
+Version:	6.7.3
+Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
 Source:		qtgrpc-%{?snapshot:%{snapshot}}%{!?snapshot:%{version}}.tar.zst
@@ -55,6 +55,9 @@ BuildRequires:	cmake(LLVM)
 BuildRequires:	cmake(Clang)
 BuildRequires:	%{_lib}gpuruntime
 License:	LGPLv3/GPLv3/GPLv2
+
+%patchlist
+qtgrpc-6.7.3-compile.patch
 
 %description
 Qt %{major} GRPC module
