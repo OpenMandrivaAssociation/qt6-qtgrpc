@@ -5,7 +5,7 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgrpc
-Version:	6.7.3
+Version:	6.8.0
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -62,6 +62,12 @@ qtgrpc-6.7.3-compile.patch
 %description
 Qt %{major} GRPC module
 
+%define extra_files_ProtobufQuick \
+%{_qtdir}/qml/QtProtobuf
+
+%define extra_devel_files_ProtobufQuick \
+%{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6protobufquickplugin*
+
 %define extra_devel_files_Grpc \
 %{_qtdir}/lib/cmake/Qt6/FindWrapgRPC*.cmake \
 %{_qtdir}/libexec/qtgrpcgen
@@ -76,7 +82,7 @@ Qt %{major} GRPC module
 %define extra_devel_files_GrpcQuick \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6grpcquickplugin*
 
-%qt6libs Grpc GrpcQuick Protobuf ProtobufQtCoreTypes ProtobufQtGuiTypes ProtobufWellKnownTypes
+%qt6libs Grpc GrpcQuick Protobuf ProtobufQtCoreTypes ProtobufQtGuiTypes ProtobufWellKnownTypes ProtobufQuick
 
 %package examples
 Summary:	Example code demonstrating the use of %{name}
