@@ -5,7 +5,7 @@
 %define _qtdir %{_libdir}/qt%{major}
 
 Name:		qt6-qtgrpc
-Version:	6.9.0
+Version:	6.9.1
 Release:	%{?beta:0.%{beta}.}%{?snapshot:0.%{snapshot}.}1
 %if 0%{?snapshot:1}
 # "git archive"-d from "dev" branch of git://code.qt.io/qt/qtbase.git
@@ -58,7 +58,6 @@ BuildRequires:	%{_lib}gpuruntime
 License:	LGPLv3/GPLv3/GPLv2
 
 %patchlist
-qtgrpc-6.9.0-rc-compile.patch
 
 %description
 Qt %{major} GRPC module
