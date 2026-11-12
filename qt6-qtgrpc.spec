@@ -83,6 +83,11 @@ Qt %{major} GRPC module
 %define extra_devel_files_GrpcQuick \
 %{_qtdir}/lib/cmake/Qt6Qml/QmlPlugins/Qt6grpcquickplugin*
 
+# magic8ball installs Main.qml, which imports the protobuf package
+# qtgrpc.examples. That module is linked into the example binary. It is
+# not installed on the QML import path, so nothing can provide it.
+%global __requires_exclude ^qml\\(qtgrpc\\.examples\\)$
+
 %qt6libs Grpc GrpcQuick Protobuf ProtobufQtCoreTypes ProtobufQtGuiTypes ProtobufWellKnownTypes ProtobufQuick
 
 %package examples
